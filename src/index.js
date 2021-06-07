@@ -1,5 +1,5 @@
 import './style.css';
-import { renderRecommendationList } from './util';
+import { renderRecommendationList } from './render-recommendation-list';
 
 const mainDiv = document.createElement('div');
 mainDiv.className = 'widget-container';
@@ -10,10 +10,14 @@ widgetHeader.className = 'widget-header';
 const leftContentHeader = document.createElement('h1');
 leftContentHeader.innerHTML = 'MORE FOR YOU';
 
+const widgetSpacer = document.createElement('div');
+widgetSpacer.className = 'widget-spacer';
+
 const rightContentHeader = document.createElement('p');
 rightContentHeader.innerHTML = 'Promoted Links by Taboola';
 
 widgetHeader.appendChild(leftContentHeader);
+widgetHeader.appendChild(widgetSpacer);
 widgetHeader.appendChild(rightContentHeader);
 
 const listWrapper = document.createElement('div');

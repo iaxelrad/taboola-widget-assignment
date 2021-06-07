@@ -20,7 +20,7 @@ module.exports = env => {
       },
       plugins: [
         new HtmlWebpackPlugin({
-          title: 'Development',
+          title: 'Taboola Widget',
         }),
         new CopyPlugin({
           patterns: [{ from: 'widget/index.html', to: '/dist' }],
