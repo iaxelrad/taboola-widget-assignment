@@ -12,8 +12,7 @@ export const renderRecommendationList = async list => {
     recItemWrapper.target = origin === 'sponsored' ? '_blank' : null;
 
     const recDescriptionWrapper = document.createElement('div');
-    recDescriptionWrapper.classList =
-      'rec-description-wrapper truncate-overflow';
+    recDescriptionWrapper.classList = 'rec-description-wrapper fade';
 
     const recDescription = document.createElement('h1');
     recDescription.innerHTML = description;

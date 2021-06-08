@@ -3,11 +3,6 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-html {
-  --lh: 1.6rem;
-  line-height: var(--lh);
-}
-
 .widget-container {
   margin: auto;
   width: 42%;
@@ -59,31 +54,29 @@ html {
   width: 15rem;
 }
 
-.rec-description-wrapper.truncate-overflow {
-  --max-lines: 3;
-  position: relative;
-  max-height: calc(var(--lh) * var(--max-lines));
+.rec-description-wrapper {
+  width: 15rem;
   overflow: hidden;
-  padding-right: 1rem;
 }
 
-.rec-description-wrapper.truncate-overflow::before {
-  position: absolute;
-  content: '...';
-  bottom: 0;
-  right: 1rem;
-  z-index: 1;
+.fade {
+  position: relative;
+  height: 6rem;
 }
 
-.rec-description-wrapper.truncate-overflow::after {
+.fade:after {
   content: '';
+  text-align: right;
   position: absolute;
   bottom: 0;
-  right: 1rem;
-  width: 1rem;
-  height: 1rem;
-  background: #fff;
-  z-index: 0;
+  right: 0;
+  width: 70%;
+  height: 1.2em;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1) 50%
+  );
 }
 
 .rec-description {
