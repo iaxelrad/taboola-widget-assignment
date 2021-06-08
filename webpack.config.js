@@ -23,7 +23,7 @@ module.exports = env => {
           title: 'Taboola Widget',
         }),
         new CopyPlugin({
-          patterns: [{ from: 'widget/index.html', to: '/dist' }],
+          patterns: [{ from: 'index.html', to: '/dist' }],
         }),
       ],
       module: {
