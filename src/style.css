@@ -5,14 +5,20 @@
 
 .widget-container {
   margin: auto;
-  width: 70%;
+  width: 42%;
 }
 
 .widget-header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-bottom: 3px solid black;
+  border-bottom: none;
+  position: relative;
+}
+
+.widget-header .left-content-header,
+.right-content-header {
+  text-align: center;
 }
 
 .widget-spacer {
@@ -40,12 +46,12 @@
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  width: 20rem;
+  width: 15rem;
 }
 
 .rec-item-thumbnail {
-  height: 14rem;
-  width: 20rem;
+  height: 10rem;
+  width: 15rem;
 }
 
 .rec-description {
@@ -63,16 +69,17 @@
     flex-direction: row;
     align-items: center;
     border-bottom: 3px solid black;
+    width: auto;
   }
 
   .rec-item-wrapper {
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    width: 35rem;
+    width: 15rem;
   }
   .rec-item-thumbnail {
-    height: 24rem;
-    width: 35rem;
+    height: 10rem;
+    width: 15rem;
   }
 }
