@@ -2,7 +2,6 @@ import { fetchRecommendations } from './api';
 
 export const renderRecommendationList = async list => {
   const recList = await fetchRecommendations();
-  console.log(recList);
 
   recList.map(({ url, thumbnail, description, branding, origin }) => {
     const recItem = document.createElement('li');
@@ -12,9 +11,15 @@ export const renderRecommendationList = async list => {
     recItemWrapper.href = url;
     recItemWrapper.target = origin === 'sponsored' ? '_blank' : null;
 
+    const recDescriptionWrapper = document.createElement('div');
+    recDescriptionWrapper.classList =
+      'rec-description-wrapper truncate-overflow';
+
     const recDescription = document.createElement('h1');
     recDescription.innerHTML = description;
     recDescription.className = 'rec-description';
+
+    recDescriptionWrapper.appendChild(recDescription);
 
     const recPublisher = document.createElement('p');
     recPublisher.innerHTML = branding;
@@ -25,7 +30,7 @@ export const renderRecommendationList = async list => {
     recThumbnail.className = 'rec-item-thumbnail';
     recItemWrapper.appendChild(recThumbnail);
 
-    recItemWrapper.appendChild(recDescription);
+    recItemWrapper.appendChild(recDescriptionWrapper);
     recItemWrapper.appendChild(recPublisher);
     recItem.appendChild(recItemWrapper);
     list.appendChild(recItem);
