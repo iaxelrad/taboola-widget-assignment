@@ -4,7 +4,7 @@
 }
 
 html {
-  --lh: 1.4rem;
+  --lh: 1.6rem;
   line-height: var(--lh);
 }
 
@@ -105,13 +105,6 @@ html {
   }
 
   .rec-item-wrapper {
-    text-decoration: none;
-    display: flex;
     flex-direction: column;
-    width: 15rem;
-  }
-  .rec-item-thumbnail {
-    height: 10rem;
-    width: 15rem;
   }
 }

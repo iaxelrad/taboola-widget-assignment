@@ -28,8 +28,14 @@ export const renderRecommendationList = async list => {
     const recThumbnail = document.createElement('img');
     recThumbnail.src = thumbnail[0].url;
     recThumbnail.className = 'rec-item-thumbnail';
-    recItemWrapper.appendChild(recThumbnail);
 
+    const recVideoThumbnail = document.createElement('iframe');
+    recVideoThumbnail.src = thumbnail[0].url;
+    recVideoThumbnail.className = 'rec-item-thumbnail';
+
+    recItemWrapper.appendChild(
+      origin === 'video' ? recVideoThumbnail : recThumbnail
+    );
     recItemWrapper.appendChild(recDescriptionWrapper);
     recItemWrapper.appendChild(recPublisher);
     recItem.appendChild(recItemWrapper);
