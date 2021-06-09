@@ -14,17 +14,18 @@ export const createDivTag = classNames => {
   return div;
 };
 
-export const createTextElement = (type, className, content) => {
+export const createTextElement = (type, className, description, name) => {
   const element = document.createElement(type);
-  element.innerHTML = content;
+  element.innerHTML = description ? description : name;
   element.className = className;
 
   return element;
 };
 
-export const createVisualElement = (type, className, source) => {
+export const createVisualElement = (type, className, source, name) => {
   const visualElement = document.createElement(type);
   visualElement.src = source;
+  visualElement.alt = type === 'img' ? name : null;
   visualElement.className = className;
 
   return visualElement;

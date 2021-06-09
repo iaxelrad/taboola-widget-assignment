@@ -10,7 +10,7 @@ export const renderRecommendationList = async list => {
   try {
     const recList = await fetchRecommendations();
 
-    recList.map(({ url, thumbnail, description, branding, origin }) => {
+    recList.map(({ url, thumbnail, description, branding, origin, name }) => {
       const recItem = document.createElement('li');
       const recItemWrapper = createAnchorTag(url, origin);
       const recDescriptionWrapper = createDivTag(
@@ -19,13 +19,15 @@ export const renderRecommendationList = async list => {
       const recDescription = createTextElement(
         'h1',
         'rec-description',
-        description
+        description,
+        name
       );
       const recPublisher = createTextElement('p', 'rec-publisher', branding);
       const recThumbnail = createVisualElement(
         'img',
         'rec-item-thumbnail',
-        thumbnail[0].url
+        thumbnail[0].url,
+        name
       );
       const recVideoThumbnail = createVisualElement(
         'iframe',
