@@ -42,5 +42,7 @@ export const renderRecommendationList = async list => {
       recItem.appendChild(recItemWrapper);
       list.appendChild(recItem);
     });
-  
+  } catch (err) {
+    console.log(err);
+  }
 };
