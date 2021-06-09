@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = env => {
   const isDevBuild = !(env && env.prod);
@@ -13,19 +12,18 @@ module.exports = env => {
       output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        // clean: true,
+        clean: true,
       },
       devServer: {
         contentBase: './dist',
+        hot: true,
       },
       plugins: [
         new HtmlWebpackPlugin({
           title: 'Taboola Widget',
         }),
-        new CopyPlugin({
-          patterns: [{ from: 'index.html', to: '/dist' }],
-        }),
       ],
+      devtool: 'inline-source-map',
       module: {
         rules: [
           { test: /\.html$/i, use: 'html-loader' },
