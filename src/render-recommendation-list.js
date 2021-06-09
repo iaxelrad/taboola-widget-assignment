@@ -1,37 +1,36 @@
 import { fetchRecommendations } from './api';
+import {
+  createAnchorTag,
+  createDivTag,
+  createTextElement,
+  createVisualElement,
+} from './elements';
 
 export const renderRecommendationList = async list => {
   const recList = await fetchRecommendations();
 
   recList.map(({ url, thumbnail, description, branding, origin }) => {
     const recItem = document.createElement('li');
-
-    const recItemWrapper = document.createElement('a');
-    recItemWrapper.className = 'rec-item-wrapper';
-    recItemWrapper.href = url;
-    recItemWrapper.target = origin === 'sponsored' ? '_blank' : null;
-
-    const recDescriptionWrapper = document.createElement('div');
-    recDescriptionWrapper.classList = 'rec-description-wrapper fade';
-
-    const recDescription = document.createElement('h1');
-    recDescription.innerHTML = description;
-    recDescription.className = 'rec-description';
+    const recItemWrapper = createAnchorTag(url, origin);
+    const recDescriptionWrapper = createDivTag('rec-description-wrapper fade');
+    const recDescription = createTextElement(
+      'h1',
+      'rec-description',
+      description
+    );
+    const recPublisher = createTextElement('p', 'rec-publisher', branding);
+    const recThumbnail = createVisualElement(
+      'img',
+      'rec-item-thumbnail',
+      thumbnail[0].url
+    );
+    const recVideoThumbnail = createVisualElement(
+      'iframe',
+      'rec-item-thumbnail',
+      thumbnail[0].url
+    );
 
     recDescriptionWrapper.appendChild(recDescription);
-
-    const recPublisher = document.createElement('p');
-    recPublisher.innerHTML = branding;
-    recPublisher.className = 'rec-publisher';
-
-    const recThumbnail = document.createElement('img');
-    recThumbnail.src = thumbnail[0].url;
-    recThumbnail.className = 'rec-item-thumbnail';
-
-    const recVideoThumbnail = document.createElement('iframe');
-    recVideoThumbnail.src = thumbnail[0].url;
-    recVideoThumbnail.className = 'rec-item-thumbnail';
-
     recItemWrapper.appendChild(
       origin === 'video' ? recVideoThumbnail : recThumbnail
     );
