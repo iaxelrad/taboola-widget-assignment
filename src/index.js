@@ -1,6 +1,6 @@
+import './style.css';
 import { widget } from './widget';
 
 (function () {
-  let element = widget();
-  document.body.appendChild(element);
+  document.body.appendChild(widget());
 })();

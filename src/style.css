@@ -5,7 +5,7 @@
 
 .widget-container {
   margin: auto;
-  width: 42%;
+  width: 44%;
 }
 
 .widget-header {
@@ -23,7 +23,7 @@
 
 .widget-spacer {
   display: flex;
-  flex-grow: 5;
+  flex-grow: 1;
 }
 
 .list-wrapper {
@@ -46,16 +46,16 @@
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  width: 15rem;
+  width: 10rem;
 }
 
 .rec-item-thumbnail {
-  height: 10rem;
-  width: 15rem;
+  height: 6rem;
+  width: 10rem;
 }
 
 .rec-description-wrapper {
-  width: 15rem;
+  width: 10rem;
   overflow: hidden;
 }
 
