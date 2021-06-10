@@ -1,5 +1,5 @@
-import './style.css';
-import { widget } from './widget';
+require('./style.css');
+const { widget } = require('./widget');
 
 (function () {
   document.body.appendChild(widget());

@@ -1,6 +1,7 @@
-import axios from 'axios';
-import { API_KEY } from '../config';
-export async function fetchRecommendations() {
+const axios = require('axios');
+const { API_KEY } = require('../config');
+
+const fetchRecommendations = async () => {
   const baseUrl =
     'http://api.taboola.com/1.0/json/taboola-templates/recommendations.get';
   const appType = 'desktop';
@@ -12,8 +13,11 @@ export async function fetchRecommendations() {
   try {
     const response = await axios.get(url);
     const { data } = response;
+    console.log();
     return data.list;
   } catch (error) {
     console.log(error);
   }
-}
+};
+
+module.exports = { fetchRecommendations };

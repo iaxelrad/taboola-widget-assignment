@@ -3,34 +3,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.widget-container {
-  margin: auto;
-  max-width: 550px;
-}
-
-.widget-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-bottom: none;
-  position: relative;
-}
-
-.widget-header .left-content-header,
-.right-content-header {
-  text-align: center;
-}
-
-.widget-spacer {
-  display: flex;
-  flex-grow: 1;
-}
-
-.list-wrapper {
-  display: flex;
-  justify-content: center;
-}
-.widget-container ul {
+ul {
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -38,10 +11,44 @@
   justify-content: center;
   padding: 0;
 }
-.widget-container li {
-  display: flex;
-  margin: 0 10px;
+
+.widget-container {
+  margin: auto;
+  max-width: 740px;
 }
+
+.widget-header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: none;
+  position: relative;
+}
+
+.left-content-header {
+  color: #104e93;
+  font-size: 15px;
+}
+
+.right-content-header {
+  font-size: 12px;
+}
+.widget-header .left-content-header,
+.right-content-header {
+  text-align: center;
+}
+
+.list-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.rec-list-item {
+  display: flex;
+  margin: 0 10px 10px;
+}
+
 .rec-item-wrapper {
   text-decoration: none;
   display: flex;
@@ -61,7 +68,7 @@
 
 .fade {
   position: relative;
-  height: 6rem;
+  height: 4rem;
 }
 
 .fade:after {
@@ -81,11 +88,13 @@
 
 .rec-description {
   color: black;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .rec-publisher {
-  color: #313131;
+  color: #888888;
+  font-size: 15px;
+  margin: 3px 0 0 0;
 }
 
 @media only screen and (min-width: 600px) {

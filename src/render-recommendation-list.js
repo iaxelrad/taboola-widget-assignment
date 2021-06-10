@@ -1,17 +1,17 @@
-import { fetchRecommendations } from './api';
-import {
-  createAnchorTag,
-  createDivTag,
-  createTextElement,
-  createVisualElement,
-} from './elements';
+const { fetchRecommendations } = require('./api');
+const { createAnchorTag } = require('./elements/create-anchor-tag');
+const { createDivTag } = require('./elements/create-div-tag');
+const { createTextElement } = require('./elements/create-text-element');
+const { createVisualElement } = require('./elements/create-visual-element');
 
-export const renderRecommendationList = async list => {
+const renderRecommendationList = async list => {
   try {
     const recList = await fetchRecommendations();
 
     recList.map(({ url, thumbnail, description, branding, origin, name }) => {
       const recItem = document.createElement('li');
+      recItem.className = 'rec-list-item';
+
       const recItemWrapper = createAnchorTag(url, origin);
       const recDescriptionWrapper = createDivTag(
         'rec-description-wrapper fade'
@@ -48,3 +48,5 @@ export const renderRecommendationList = async list => {
     console.log(err);
   }
 };
+
+module.exports = { renderRecommendationList };
