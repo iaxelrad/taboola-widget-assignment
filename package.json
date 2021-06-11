@@ -1,7 +1,7 @@
 {
   "name": "taboola-widget-fresh",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Taboola recommendation vanilla javascript widget implemented with pure js, html & css.",
   "private": true,
   "scripts": {
     "test": "jest",
@@ -9,8 +9,8 @@
     "build": "webpack"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Itamar Axelrad",
+  "license": "MIT",
   "devDependencies": {
     "@testing-library/dom": "^7.2.1",
     "@testing-library/jest-dom": "^5.5.0",
