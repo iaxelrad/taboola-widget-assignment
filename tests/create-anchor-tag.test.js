@@ -12,7 +12,7 @@ describe('Create an anchor tag element', () => {
     expect(anchorTag).toHaveClass('rec-item-wrapper');
     expect(anchorTag).toHaveAttribute('target', '_blank');
   });
-  it('creates anj organic anchor tag element ', () => {
+  it('creates an organic anchor tag element ', () => {
     const anchorTag = createAnchorTag(url, 'organic');
 
     expect(anchorTag).not.toBeNull();
