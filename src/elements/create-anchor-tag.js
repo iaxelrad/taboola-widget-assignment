@@ -8,5 +8,5 @@ const createAnchorTag = (url, origin) => {
 };
 
 module.exports = {
-  createAnchorTag: createAnchorTag,
+  createAnchorTag,
 };

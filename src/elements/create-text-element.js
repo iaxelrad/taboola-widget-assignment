@@ -7,5 +7,5 @@ const createTextElement = (type, className, description, name) => {
 };
 
 module.exports = {
-  createTextElement: createTextElement,
+  createTextElement,
 };

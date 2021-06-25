@@ -8,5 +8,5 @@ const createVisualElement = (type, className, source, name) => {
 };
 
 module.exports = {
-  createVisualElement: createVisualElement,
+  createVisualElement,
 };

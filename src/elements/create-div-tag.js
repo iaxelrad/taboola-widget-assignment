@@ -1,4 +1,4 @@
-const createDivTag = classNames => {
+const createMultiClassDivTag = classNames => {
   const div = document.createElement('div');
   div.classList = classNames;
 
@@ -6,5 +6,5 @@ const createDivTag = classNames => {
 };
 
 module.exports = {
-  createDivTag: createDivTag,
+  createMultiClassDivTag,
 };

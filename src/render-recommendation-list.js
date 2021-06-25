@@ -1,6 +1,6 @@
 const { fetchRecommendations } = require('./api');
 const { createAnchorTag } = require('./elements/create-anchor-tag');
-const { createDivTag } = require('./elements/create-div-tag');
+const { createMultiClassDivTag } = require('./elements/create-div-tag');
 const { createTextElement } = require('./elements/create-text-element');
 const { createVisualElement } = require('./elements/create-visual-element');
 
@@ -13,9 +13,10 @@ const renderRecommendationList = async list => {
       recItem.className = 'rec-list-item';
 
       const recItemWrapper = createAnchorTag(url, origin);
-      const recDescriptionWrapper = createDivTag(
+      const recDescriptionWrapper = createMultiClassDivTag(
         'rec-description-wrapper fade'
       );
+      const recContent = document.createElement('div');
       const recDescription = createTextElement(
         'h1',
         'rec-description',
@@ -23,6 +24,8 @@ const renderRecommendationList = async list => {
         name
       );
       const recPublisher = createTextElement('p', 'rec-publisher', branding);
+      recContent.appendChild(recDescriptionWrapper);
+      recContent.appendChild(recPublisher);
       const recThumbnail = createVisualElement(
         'img',
         'rec-item-thumbnail',
@@ -39,8 +42,7 @@ const renderRecommendationList = async list => {
       recItemWrapper.appendChild(
         origin === 'video' ? recVideoThumbnail : recThumbnail
       );
-      recItemWrapper.appendChild(recDescriptionWrapper);
-      recItemWrapper.appendChild(recPublisher);
+      recItemWrapper.appendChild(recContent);
       recItem.appendChild(recItemWrapper);
       list.appendChild(recItem);
     });
