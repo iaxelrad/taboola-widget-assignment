@@ -49,4 +49,4 @@ LinkedIn Profile - https://www.linkedin.com/in/itamaraxel/
 
 ## License
 
-This project is licensed under the ISC License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the LICENSE.md file for details
