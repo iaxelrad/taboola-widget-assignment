@@ -21,15 +21,17 @@ describe('Create a visual element', () => {
     expect(imgTag).toHaveAttribute('alt', name);
   });
 });
-it('creates an iframe element', () => {
-  let type = 'iframe';
+it('creates an video element', () => {
+  let type = 'video';
   const source = 'https://www.youtube.com/embed/y3nTJ3R2Tdk';
-  const imgTag = createVisualElement(type, className, source, name);
+  const videoTag = createVisualElement(type, className, source, name);
+  const videoSourceTag = document.createElement('source');
 
-  expect(imgTag).not.toBeNull();
-  expect(imgTag).not.toHaveTextContent();
-  expect(imgTag).toHaveClass(className);
-  expect(imgTag).toHaveAttribute('src', source);
-  expect(imgTag).not.toHaveAttribute('alt', name);
+  expect(videoTag).not.toBeNull();
+  expect(videoTag).not.toHaveTextContent();
+  expect(videoTag).toHaveClass(className);
+  expect(videoTag.appendChild(videoSourceTag)).not.toBeNull;
+  expect(videoTag).not.toHaveAttribute('src', source);
+  expect(videoTag).not.toHaveAttribute('alt', name);
 });
 // });

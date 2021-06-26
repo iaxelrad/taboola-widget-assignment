@@ -33,7 +33,7 @@ const renderRecommendationList = async list => {
         name
       );
       const recVideoThumbnail = createVisualElement(
-        'iframe',
+        'video',
         'rec-item-thumbnail',
         thumbnail[0].url
       );
